@@ -13,4 +13,8 @@ switchCase(migration):
 (existing):
 # run solution: cd .\API\
 dotnet watch --no-hot-reload
+------------------------------------------------------
+want add new migration ?
+cd main: dotnet ef migration add IdentityAdded -p Persistence -s API
+cd API: dotnet watch
 ```
