@@ -21,4 +21,8 @@ cd API: dotnet watch
 Note:
 Add migration for Entity Framework Relationships
 dotnet ef migration add ActivityAttendeesAdded -p Persistence -s API
+------------------------------------------------------
+Note: If need delete all database
+cd main: dotnet ef database drop -p Persistence -s API
+cd API: dotnet watch
 ```

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Persistence;
 using System.Security.Claims;
 
-namespace Infrastructure
+namespace Infrastructure.Security
 {
     public class UserAccessor(IHttpContextAccessor httpContextAccessor, AppDbContext dbContext) : IUserAccessor
     {
