@@ -2,7 +2,6 @@
 using Application.Core;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -26,7 +25,7 @@ namespace Application.Activities.Queries
 
                 if (activity == null) return Result<ActivityDto>.Failure("Activity not found", 404);
 
-                return Result<ActivityDto>.Success(mapper.Map<ActivityDto>(activity));
+                return Result<ActivityDto>.Success(activity);
             }
         }
     }

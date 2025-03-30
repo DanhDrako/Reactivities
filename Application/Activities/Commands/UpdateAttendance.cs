@@ -30,7 +30,7 @@ namespace Application.Activities.Commands
                 var attendance = activity.Attendees.FirstOrDefault(x => x.UserId == user.Id);
                 var isHost = activity.Attendees.Any(x => x.IsHost && x.UserId == user.Id);
 
-                if(attendance != null)
+                if (attendance != null)
                 {
                     if (isHost) activity.IsCancelled = !activity.IsCancelled;
                     else activity.Attendees.Remove(attendance);
