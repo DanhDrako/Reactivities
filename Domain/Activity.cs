@@ -8,7 +8,7 @@
         public required string Description { get; set; }
         public required string Category { get; set; }
         public bool IsCancelled { get; set; }
-        
+
         // location props
         public required string City { get; set; }
         public required string Venue { get; set; }
@@ -17,6 +17,7 @@
 
         // navigation properties
         public ICollection<ActivityAttendee> Attendees { get; set; } = [];
+        public ICollection<Comment> Comments { get; set; } = [];
 
     }
 }
