@@ -30,9 +30,9 @@ namespace Application.Profiles.Commands
 
                 var result = await context.SaveChangesAsync(cancellationToken) > 0;
 
-                if (!result) return Result<Unit>.Failure("Failed to update the profile", 400);
-
-                return Result<Unit>.Success(Unit.Value);
+                return result
+                    ? Result<Unit>.Success(Unit.Value)
+                    : Result<Unit>.Failure("Failed to update the profile", 400);
             }
         }
     }
