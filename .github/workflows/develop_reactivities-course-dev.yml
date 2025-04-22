@@ -6,7 +6,7 @@ name: Build and deploy ASP.Net Core app to Azure Web App - reactivities-course-d
 on:
   push:
     branches:
-      - develop
+      - develop-fe
   workflow_dispatch:
 
 jobs:
