@@ -25,4 +25,8 @@ dotnet ef migrations add ActivityAttendeesAdded -p Persistence -s API
 Note: If need delete all database
 cd main: dotnet ef database drop -p Persistence -s API
 cd API: dotnet watch
+------------------------------------------------------
+build dotnet
+dotnet build
+dotnet publish -c Release -o ./bin/Publish
 ```
