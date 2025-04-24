@@ -29,4 +29,8 @@ cd API: dotnet watch
 build dotnet
 dotnet build
 dotnet publish -c Release -o ./bin/Publish
+------------------------------------------------------
+config
+database: networking
+web-app: connectionString, appSettings
 ```
