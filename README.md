@@ -32,5 +32,5 @@ dotnet publish -c Release -o ./bin/Publish
 ------------------------------------------------------
 config
 database: networking
-web-app: connectionString, appSettings
+web-app: connectionString, appSettings, socket
 ```
