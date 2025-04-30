@@ -2,6 +2,7 @@ import axios from 'axios';
 import { store } from '../stores/store';
 import { toast } from 'react-toastify';
 import { router } from '../../app/router/Routes';
+import { MessageAPI } from '../util/constants';
 
 const sleep = (delay: number) => {
   return new Promise((resolve) => {
@@ -45,7 +46,7 @@ agent.interceptors.response.use(
         }
         break;
       case 401:
-        if (data.detail === 'NotAllowed') {
+        if (data.detail === MessageAPI.NotAllowed) {
           throw new Error(data.detail);
         } else {
           toast.error('Unauthorised');
