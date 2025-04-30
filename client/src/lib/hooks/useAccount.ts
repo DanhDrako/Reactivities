@@ -4,6 +4,7 @@ import agent from '../api/agent';
 import { useNavigate } from 'react-router';
 import { RegisterSchema } from '../schemas/registerSchema';
 import { toast } from 'react-toastify';
+import { ChangePasswordSchema } from '../schemas/changePasswordSchema';
 
 export const useAccount = () => {
   const queryClient = useQueryClient();
@@ -73,6 +74,42 @@ export const useAccount = () => {
     }
   });
 
+  const changePassword = useMutation({
+    mutationFn: async (data: ChangePasswordSchema) => {
+      await agent.post('/account/change-password', data);
+    },
+    onSuccess: () => {
+      toast.success('Your password has been changed successfully!');
+    },
+    onError: () => {
+      toast.error('Error changing password - please try again');
+    }
+  });
+
+  const forgotPassword = useMutation({
+    mutationFn: async (email: string) => {
+      await agent.post('/forgotPassword', { email });
+    },
+    onSuccess: () => {
+      toast.success('Password reset link sent to your email!');
+    },
+    onError: () => {
+      toast.error('Error sending password reset link - please try again');
+    }
+  });
+
+  const resetPassword = useMutation({
+    mutationFn: async (data: ResetPassword) => {
+      await agent.post('/resetPassword', data);
+    },
+    onSuccess: () => {
+      toast.success('Your password has been reset successfully!');
+    },
+    onError: () => {
+      toast.error('Error resetting password - please try again');
+    }
+  });
+
   return {
     loginUser,
     currentUser,
@@ -80,6 +117,9 @@ export const useAccount = () => {
     registerUser,
     logoutUser,
     verifyEmail,
-    resendConfirmationEmail
+    resendConfirmationEmail,
+    changePassword,
+    forgotPassword,
+    resetPassword
   };
 };
