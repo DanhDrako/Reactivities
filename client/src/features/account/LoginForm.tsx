@@ -103,17 +103,22 @@ export default function LoginForm() {
           </Button>
         </Box>
       ) : (
-        <Typography sx={{ textAlign: 'center' }}>
-          Don't have an account?
-          <Typography
-            component={Link}
-            to="/register"
-            color="primary"
-            sx={{ ml: 2, fontWeight: 'bold' }}
-          >
-            Sign up
+        <Box display="flex" alignItems="center" justifyContent="center" gap={3}>
+          <Typography>
+            Forgot password? Click <Link to="/forgot-password">here</Link>
           </Typography>
-        </Typography>
+          <Typography sx={{ textAlign: 'center' }}>
+            Don't have an account?
+            <Typography
+              component={Link}
+              to="/register"
+              color="primary"
+              sx={{ ml: 2, fontWeight: 'bold' }}
+            >
+              Sign up
+            </Typography>
+          </Typography>
+        </Box>
       )}
     </Paper>
   );
